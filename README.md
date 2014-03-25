@@ -17,7 +17,7 @@ class FooView extend Marionette.ItemView
 
 ### ViewLinks
 
-Allows you to define `v-href="route"` within you tags for invoking `triggerMethod`.
+Allows you to define `v-href="route"` within you tags for invoking `App.Router.navigate` passing your route.
 
 ```coffeescript
 class FooView extend Marionette.ItemView
