@@ -1,7 +1,7 @@
 App.module "Behaviors", (Behaviors, App, Backbone, Marionette, $, _) ->
   Behaviors.Closeable = Marionette.Behavior.extend
     events: ->
-      "click .close": @view.close
+      "click .close": -> @view.close()
 
     onShow: ->
       $(window).on 'keydown', _.bind(@checkClose, @view)
