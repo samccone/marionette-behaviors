@@ -14,3 +14,20 @@ class FooView extend Marionette.ItemView
   behaviors:
     Closeable: {}
 ```
+
+### ViewLinks
+
+Allows you to define `v-href="route"` within you tags for invoking `triggerMethod`.
+
+```coffeescript
+class FooView extend Marionette.ItemView
+  behaviors:
+    ViewLinkes: {}
+```
+
+** In your view template **
+```jade
+ul
+  li
+    a(v-href="detail/{item.id}")
+```
