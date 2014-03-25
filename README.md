@@ -22,7 +22,7 @@ Allows you to define `v-href="route"` within you tags for invoking `triggerMetho
 ```coffeescript
 class FooView extend Marionette.ItemView
   behaviors:
-    ViewLinkes: {}
+    ViewLinks: {}
 ```
 
 ** In your view template **
