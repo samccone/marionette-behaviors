@@ -10,7 +10,7 @@ A collection of useful behaviors I have abstracted from my applications
 Closes a view on click of an element with a class of `.close`. It also listens for a user to hit the `esc` key and then closes the view
 
 ```coffeescript
-class FooView extend Marionette.ItemView
+class FooView extends Marionette.ItemView
   behaviors:
     Closeable: {}
 ```
@@ -20,7 +20,7 @@ class FooView extend Marionette.ItemView
 Allows you to define `v-href="route"` within you tags for invoking `App.Router.navigate` passing your route.
 
 ```coffeescript
-class FooView extend Marionette.ItemView
+class FooView extends Marionette.ItemView
   behaviors:
     ViewLinks: {}
 ```
@@ -37,7 +37,7 @@ ul
 Allows you to scroll to the bottom of a given view `onRender` and on any passed events emitted on `App.vent`
 
 ```coffeescript
-class FooView extend Marionette.ItemView
+class FooView extends Marionette.ItemView
   behaviors:
     BottomScroller: {
       events: "commentsUpdated"
