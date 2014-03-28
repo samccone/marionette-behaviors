@@ -3,9 +3,13 @@ Marionette Behaviors
 
 A collection of useful behaviors I have abstracted from my applications
 
-## Behaviors
+### Table of Contents
 
-### Closeable
+  * [Closeable](#closeable)
+  * [ViewLinks](#viewlinks)
+  * [BottomScroller](#bottomscroller)
+
+## Closeable
 
 Closes a view on click of an element with a class of `.close`. It also listens for a user to hit the `esc` key and then closes the view
 
@@ -15,7 +19,7 @@ class FooView extends Marionette.ItemView
     Closeable: {}
 ```
 
-### ViewLinks
+## ViewLinks
 
 Allows you to define `v-href="route"` within you tags for invoking `App.Router.navigate` passing your route.
 
@@ -32,7 +36,7 @@ ul
     a(v-href="detail/{item.id}")
 ```
 
-### BottomScroller
+## BottomScroller
 
 Allows you to scroll to the bottom of a given view `onRender` and on any passed events emitted on `App.vent`
 
@@ -44,8 +48,8 @@ class FooView extends Marionette.ItemView
     }
 ```
 
-##### Options
+### Options
 
-###### events
+#### Events
   The `events` option can be `null`, a single string, or an array or strings.
   All of the passed events will be set to listen on `App.vent`
