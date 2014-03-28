@@ -31,3 +31,15 @@ ul
   li
     a(v-href="detail/{item.id}")
 ```
+
+### BottomScroller
+
+Allows you to scroll to the bottom of a given view `onRender` and on any passed events emitted on `App.vent`
+
+```coffeescript
+class FooView extend Marionette.ItemView
+  behaviors:
+    BottomScroller: {
+      events: "commentsUpdated"
+    }
+```
