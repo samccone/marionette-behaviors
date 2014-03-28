@@ -43,3 +43,9 @@ class FooView extends Marionette.ItemView
       events: "commentsUpdated"
     }
 ```
+
+##### Options
+
+###### events
+  The `events` option can be `null`, a single string, or an array or strings.
+  All of the passed events will be set to listen on `App.vent`
