@@ -8,6 +8,7 @@ A collection of useful behaviors I have abstracted from my applications
   * [Closeable](#closeable)
   * [ViewLinks](#viewlinks)
   * [BottomScroller](#bottomscroller)
+  * [KeyEvents](#keyevents)
 
 ## Closeable
 
@@ -53,3 +54,31 @@ class FooView extends Marionette.ItemView
 #### Events
   The `events` option can be `null`, a single string, or an array or strings.
   All of the passed events will be set to listen on `App.vent`
+
+## KeyEvents
+
+The `KeyEvents` behavior allows you to define global (single) key events that trigger view specific actions.
+
+```coffeescript
+class FooView extends Marionette.ItemView
+  behaviors:
+    KeyEvents:
+      8:  -> @deleteImage()
+      39: -> App.vent.trigger('edit:advance')
+      37: -> App.vent.trigger('edit:previous')
+      49: -> @setActiveRating(0)
+      50: -> @setActiveRating(1)
+      51: -> @setActiveRating(2)
+      52: -> @setActiveRating(3)
+      53: -> @setActiveRating(4)
+      preventDefault: [8, 39, 37]
+
+  setActiveRating: -> #...
+  deleteImage: -> #...
+```
+
+### Options
+Each option key value actually represents the keyboard event key.
+
+#### preventDefault
+Any keyCode passed into this array will prevent the default action of the event.
