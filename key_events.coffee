@@ -11,7 +11,7 @@ App.module "Behaviors", (Behaviors, App, Backbone, Marionette) ->
 
     shouldIgnore: ->
       a = document.activeElement.tagName
-      return if a is "INPUT" or a is "TEXTAREA"
+      return true if a is "INPUT" or a is "TEXTAREA"
 
     checkKey: (e) =>
       return if @shouldIgnore()
