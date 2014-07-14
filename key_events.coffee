@@ -1,12 +1,9 @@
 App.module "Behaviors", (Behaviors, App, Backbone, Marionette) ->
   class Behaviors.KeyEvents extends Marionette.Behavior
-    defaults:
-      preventDefault: []
-
     onShow: ->
       $(window).on 'keydown', @checkKey
 
-    onClose: ->
+    onDestroy: ->
       $(window).off 'keydown', @checkKey
 
     shouldIgnore: ->
