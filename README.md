@@ -9,6 +9,7 @@ A collection of useful behaviors I have abstracted from my applications
   * [ViewLinks](#viewlinks)
   * [BottomScroller](#bottomscroller)
   * [KeyEvents](#keyevents)
+  * [HtmlClass](#htmlclass)
 
 ## Closeable
 
@@ -82,3 +83,13 @@ Each option key value actually represents the keyboard event key.
 
 #### preventDefault
 Any keyCode passed into this array will prevent the default action of the event.
+
+## HtmlClass
+
+The `HtmlClass` behavior allows you to set a class on the `html` element on `onShow` and remove the class `onDestroy` of the view.
+
+```coffeescript
+  class MyView extends Marionette.ItemView
+    behaviors:
+      HtmlClass: {class: "help-modal noover"}
+```
