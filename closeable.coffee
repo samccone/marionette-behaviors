@@ -1,14 +1,14 @@
 App.module "Behaviors", (Behaviors, App, Backbone, Marionette, $, _) ->
   class Behaviors.Closeable extends Marionette.Behavior
     events: ->
-      "click .close": -> @view.close()
+      "click .close": -> @view.destroy()
 
     onShow: ->
       $(window).on 'keydown', @checkClose
 
-    onClose: ->
+    onDestroy: ->
       $(window).off 'keydown', @checkClose
 
     checkClose: (e) =>
-      @view.close() if e.keyCode is 27
+      @view.destroy() if e.keyCode is 27
 
