@@ -10,6 +10,7 @@ A collection of useful behaviors I have abstracted from my applications
   * [BottomScroller](#bottomscroller)
   * [KeyEvents](#keyevents)
   * [HtmlClass](#htmlclass)
+  * [AutoRegion](#autoregion)
 
 ## Closeable
 
@@ -93,3 +94,30 @@ The `HtmlClass` behavior allows you to set a class on the `html` element on `onS
     behaviors:
       HtmlClass: {class: "help-modal noover"}
 ```
+
+## AutoRegion
+
+Do you find yourself writing this code over and over again?
+
+```coffeescript
+class MyView extends Marionette.Layout
+  onShow: ->
+    @fooRegion.show(new BarView)
+    @zapRegion.show(new ZapView)
+```
+
+Well `AutoRegion` is the answer!
+With a few declarative lines of code your regions will now auto populate.
+
+```coffeescript
+class MyView extends Marionette.Layout
+  behaviors:
+    AutoRegion: {}
+
+  regions: ->
+    fooRegion:
+      selector: ".bam"
+      viewClass: MyViewClass
+      viewOptions: {} (or method def)
+```
+
