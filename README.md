@@ -100,7 +100,7 @@ The `HtmlClass` behavior allows you to set a class on the `html` element on `onS
 Do you find yourself writing this code over and over again?
 
 ```coffeescript
-class MyView extends Marionette.Layout
+class MyView extends Marionette.LayoutView
   onShow: ->
     @fooRegion.show(new BarView)
     @zapRegion.show(new ZapView)
@@ -110,7 +110,7 @@ Well `AutoRegion` is the answer!
 With a few declarative lines of code your regions will now auto populate.
 
 ```coffeescript
-class MyView extends Marionette.Layout
+class MyView extends Marionette.LayoutView
   behaviors:
     AutoRegion: {}
 
