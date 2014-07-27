@@ -17,7 +17,7 @@ App.module "Behaviors", (Behaviors, App, Backbone, Marionette) ->
       return if @shouldIgnore()
 
       if toInvoke = @options[e.keyCode]
-        fn = toInvoke.call(@view)
+        fn = toInvoke.call(@view, e)
 
       if ~@options.preventDefault.indexOf(e.keyCode)
         e.preventDefault()
